@@ -31,7 +31,7 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     RSYNC_ARGS+=(--dry-run)
 fi
 
-/opt/homebrew/bin//opt/homebrew/bin/rsync "${RSYNC_ARGS[@]}" \
+/opt/homebrew/bin/rsync "${RSYNC_ARGS[@]}" \
     -e "ssh -o BatchMode=yes -o ConnectTimeout=5" \
     site/ "${REMOTE}:${REMOTE_DIR}/"
 
